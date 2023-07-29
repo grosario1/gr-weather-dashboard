@@ -14,7 +14,7 @@ https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-gi
 
 Info Coming Soon.
 
-Link to deployed live URL [here.](https://grosario1.github.io/gil-rosario-coding-quiz-app/)
+Link to deployed live URL [here.](https://grosario1.github.io/gr-weather-dashboard/)
 
 ![Alt text]("../../assets/../images/coding-ap-main-pg.jpg)
 ![Alt text]("../../assets/../images/coding-ap-question-example-on-page.jpg)
