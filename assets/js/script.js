@@ -83,9 +83,8 @@ function displayForecast(data) {
       forecastInfoHTML = '<p>Forecast not available.</p>';
     } else {
       var forecastList = data.list;
-      forecastInfoHTML += '<h2>5-Day Forecast</h2>';
       forecastInfoHTML += '<div class="forecast-container">';
-      for (var i = 0; i < forecastList.length; i++) {
+      for (var i = 0; i < 5; i++) {
         var date = new Date(forecastList[i].dt * 1000).toLocaleDateString('en-US');
         var iconCode = forecastList[i].weather[0].icon;
         var temperatureCelsius = forecastList[i].main.temp;
