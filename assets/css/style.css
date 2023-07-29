@@ -1,12 +1,10 @@
-/* #saved-cities-container .saved-city {
-    margin-bottom: 4px;
-  } */
 
 .forecast-item {
-    background-color: #f8f9fa;
-    border: 1px solid #ccc;
+    background-color: #17426c;
+    border: 1px solid black;
     padding: 10px;
-    margin: 5px;
+    width: 180px;
+    height: 100%;
 }
 
 .forecast-item img {
@@ -18,8 +16,9 @@
     margin-bottom: 5px;
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
     .forecast-item {
-        flex-basis: 100%;
+      flex-basis: calc(16% - 10px); 
     }
-}
+  }
+  
