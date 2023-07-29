@@ -3,23 +3,23 @@ var apiKey = '30e0b19128baf005a61976d9fa1faeeb';
 
 function getWeatherData(city) {
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if (request.readyState === 4) {
-        if (request.status === 200) {
-          var data = JSON.parse(request.responseText);
-          displayWeather(data);
-          getForecastData(data.coord.lat, data.coord.lon);
-          saveCity(city);
-          updateSavedCitiesList();
-        } else {
-          displayWeather(null);
-          displayForecast(null); // Clear forecast display in case of error
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                var data = JSON.parse(request.responseText);
+                displayWeather(data);
+                getForecastData(data.coord.lat, data.coord.lon);
+                saveCity(city);
+                updateSavedCitiesList();
+            } else {
+                displayWeather(null);
+                displayForecast(null); // Clear forecast display in case of error
+            }
         }
-      }
     };
     request.open('GET', 'https://api.openweathermap.org/data/2.5/weather?q=' + city + '&appid=' + apiKey + '&units=metric');
     request.send();
-  }
+}
 
 var form = document.getElementById('user-form');
 var cityInput = document.getElementById('city-input');
@@ -63,46 +63,48 @@ var forecastDisplay = document.getElementById('forecast-display');
 
 function getForecastData(latitude, longitude) {
     var request = new XMLHttpRequest();
-    request.onreadystatechange = function() {
-      if (request.readyState === 4) {
-        if (request.status === 200) {
-          var data = JSON.parse(request.responseText);
-          displayForecast(data);
-        } else {
-          displayForecast(null); 
+    request.onreadystatechange = function () {
+        if (request.readyState === 4) {
+            if (request.status === 200) {
+                var data = JSON.parse(request.responseText);
+                displayForecast(data);
+            } else {
+                displayForecast(null);
+            }
         }
-      }
     };
     request.open('GET', 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=' + apiKey + '&units=metric');
     request.send();
-  }
+}
 
 function displayForecast(data) {
     var forecastInfoHTML = '';
     if (!data) {
-      forecastInfoHTML = '<p>Forecast not available.</p>';
+        forecastInfoHTML = '<p>Forecast not available.</p>';
     } else {
-      var forecastList = data.list;
-      forecastInfoHTML += '<div class="forecast-container">';
-      for (var i = 0; i < 5; i++) {
-        var date = new Date(forecastList[i].dt * 1000).toLocaleDateString('en-US');
-        var iconCode = forecastList[i].weather[0].icon;
-        var temperatureCelsius = forecastList[i].main.temp;
-        var temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius);
-  
-        forecastInfoHTML += `
-          <div class="forecast-item">
-            <p>${date}</p>
-            <img src="https://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon">
-            <p>Temperature: ${temperatureFahrenheit} °F</p>
+        var forecastList = data.list;
+        forecastInfoHTML += '<div class="row forecast-container">';
+        for (var i = 0; i < 5; i++) {
+            var date = new Date(forecastList[i].dt * 1000).toLocaleDateString('en-US');
+            var iconCode = forecastList[i].weather[0].icon;
+            var temperatureCelsius = forecastList[i].main.temp;
+            var temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius);
+
+            forecastInfoHTML += `
+          <div class="col-md-2 mb-3">
+            <div class="card forecast-item">
+              <p>${date}</p>
+              <img src="https://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon">
+              <p>Temperature: ${temperatureFahrenheit} °F</p>
+            </div>
           </div>
         `;
-      }
-      forecastInfoHTML += '</div>';
+        }
+        forecastInfoHTML += '</div>';
     }
-  
+
     forecastDisplay.innerHTML = forecastInfoHTML;
-  }
+}
 
 function handleFormSubmit(event) {
     event.preventDefault();

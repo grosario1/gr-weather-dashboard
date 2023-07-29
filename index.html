@@ -14,12 +14,12 @@
 
 <body class="d-flex flex-column min-vh-100">
     <header class="hero bg-primary text-white py-3">
-        <h1 class="app-title text-center"> Weather Dashboard</h1>
+        <h1 class="app-title text-center">Weather Dashboard</h1>
     </header>
 
     <main class="container flex-fill d-flex justify-content-between py-4">
         <div class="col-md-4">
-            <div class="card">
+            <div class="card mb-4">
                 <h3 class="card-header text-uppercase bg-secondary text-white">Search For a City:</h3>
                 <form id="user-form" class="card-body">
                     <div class="input-group mb-3">
@@ -31,28 +31,26 @@
                 </form>
             </div>
 
-            <div id="saved-cities-container" class="mt-4 d-flex flex-column"></div>
+            <div id="saved-cities-container" class="d-flex flex-column"></div>
         </div>
 
 
         <div class="col-md-8">
             <div class="row">
-                <div class="col-md-12 mb-4">
-                    <div class="card">
+                <div class="col-md-12 mb-3">
+                    <div class="card mb-4">
                         <div class="card-body" id="weather-display"></div>
                     </div>
                 </div>
 
-                <div class="col-md-12">
-                    <div class="card">
-                        <div class="card-body">
-                            <h2 class="card-title">5-Day Forecast</h2>
-                            <div class="row forecast-container" id="forecast-display"></div>
+                <div class="card">
+                    <div class="card-body">
+                        <h2 class="card-title">5-Day Forecast</h2>
+                        <div class="row forecast-container" id="forecast-display">
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
 
     </main>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
