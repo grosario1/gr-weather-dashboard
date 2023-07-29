@@ -1,33 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
-  <link rel="stylesheet" href="./assets/css/style.css" />
-  <title>Weather Dashboard</title>
-</head>
-
-<body class="flex-column min-100-vh">
-  <header class="hero">
-    <h1 class="app-title"><i class="fab fa-weather"></i>Weather Dashboard</h1>
-  </header>
-
-
-  <main class="flex-row justify-space-between">
-    <div class="col-12 col-md-4">
-
-      <div class="card">
-        <h3 class="card-header text-uppercase">Search For a City:</h3>
-        <form id="user-form" class="card-body"></form>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Sans:400,400i,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./assets/css/style.css" />
+    <title>Weather Dashboard</title>
+  </head>
+  
+  <body class="d-flex flex-column min-vh-100">
+    <header class="hero bg-primary text-white py-3">
+      <h1 class="app-title">Weather Dashboard</h1>
+    </header>
+  
+    <main class="container flex-fill d-flex justify-content-between py-4">
+      <div class="col-md-4">
+  
+        <div class="card">
+          <h3 class="card-header text-uppercase bg-secondary text-white">Search For a City:</h3>
+          <form id="user-form" class="card-body">
+            <div class="input-group mb-3">
+              <input type="text" id="city-input" class="form-control" placeholder="Enter city name..." />
+              <div class="input-group-append">
+                <button type="submit" id="search-button" class="btn btn-primary">Search</button>
+              </div>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
+  
+      <div class="col-md-8" id="weather-display"></div>
 
-    
-  </main>
+
+    </main>
 
   <script src="./assets/js/homepage.js"></script>
 </body>
