@@ -96,7 +96,7 @@ function displayForecast(data) {
             var windSpeed = forecastList[i].wind.speed;
 
             var forecastItemHTML = `
-                <div class="col-md-3 mb-5">
+                <div class="col-md-2 mb-4">
                     <div class="card forecast-item">
                         <p>${date}</p>
                         <img src="https://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon">
