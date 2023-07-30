@@ -42,7 +42,7 @@ function displayWeather(data) {
           <h2>${cityName} (${date})</h2>
           <div>
             <img src="https://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon">
-            <p>Temperature: ${Math.round(temperatureFahrenheit)} °F</p>
+            <p>Temperature: ${temperatureFahrenheit} °F</p>
             <p>Humidity: ${humidity} %</p>
             <p>Wind Speed: ${windSpeed} m/s</p>
           </div>
@@ -84,7 +84,7 @@ function displayForecast(data) {
     } else {
         var forecastList = data.list;
         var currentDate = new Date(forecastList[0].dt * 1000).toLocaleDateString('en-US');
-        forecastInfoHTML += '<div class="row forecast-container">';
+        forecastInfoHTML += '<h3 class="text-black-50">5-Day Forecast:</h3><div class="row forecast-container">';
         for (var i = 0; i < 5; i++) {
             var date = new Date(currentDate);
             date.setDate(date.getDate() + i + 1);
@@ -94,22 +94,24 @@ function displayForecast(data) {
             var temperatureFahrenheit = celsiusToFahrenheit(temperatureCelsius);
             var humidity = forecastList[i].main.humidity;
             var windSpeed = forecastList[i].wind.speed;
-            forecastInfoHTML += `
-                <div class="col-md-2 mb-9">
+
+            var forecastItemHTML = `
+                <div class="col-md-3 mb-5">
                     <div class="card forecast-item">
                         <p>${date}</p>
                         <img src="https://openweathermap.org/img/w/${iconCode}.png" alt="Weather Icon">
-                        <p>Temperature: ${Math.round(temperatureFahrenheit)} °F</p>
+                        <p>Temperature: ${temperatureFahrenheit} °F</p>
                         <p>Humidity: ${humidity} %</p>
                         <p>Wind Speed: ${windSpeed} m/s</p>
                     </div>
                 </div>
             `;
+            forecastInfoHTML += forecastItemHTML;
         }
         forecastInfoHTML += '</div>';
     }
-    forecastDisplay.innerHTML = '<h3 class="text-black-50">5-Day Forecast:</h3>' + forecastInfoHTML;
-  }
+    forecastDisplay.innerHTML = forecastInfoHTML;
+}
   
 function handleFormSubmit(event) {
     event.preventDefault();

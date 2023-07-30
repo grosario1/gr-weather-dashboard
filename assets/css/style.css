@@ -3,7 +3,7 @@
     background-color: #17426c;
     border: 1px solid black;
     padding: 10px;
-    width: 180px;
+    width: 100%;
     height: 100%;
 }
 
@@ -18,7 +18,6 @@
 
 @media (min-width: 768px) {
     .forecast-item {
-      flex-basis: calc(16% - 10px); 
+      flex-basis: calc(35% - 10px); 
     }
   }
-  
