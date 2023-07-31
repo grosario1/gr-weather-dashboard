@@ -22,7 +22,7 @@ User enters a city into the form field, clicks on search and then the current we
 
 Link to deployed live URL [here.](https://grosario1.github.io/gr-weather-dashboard/)
 
-![Alt text]("../../../gr-weather-dashboard/assets/gr-weather-dashboard.jpg)
+![Alt text]("./../assets/gr-weather-dashboard.jpg)
 
 You can find code repo [here.](https://github.com/grosario1/gil-rosario-coding-quiz-app)
 
