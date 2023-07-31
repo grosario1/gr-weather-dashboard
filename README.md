@@ -24,7 +24,7 @@ Link to deployed live URL [here.](https://grosario1.github.io/gr-weather-dashboa
 
 ![Alt text]("./../assets/gr-weather-dashboard.jpg)
 
-You can find code repo [here.](https://github.com/grosario1/gil-rosario-coding-quiz-app)
+You can find code repo [here.](https://github.com/grosario1/gr-weather-dashboard)
 
 ## Credits
 
