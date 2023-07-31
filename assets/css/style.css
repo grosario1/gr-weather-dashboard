@@ -1,5 +1,5 @@
 /* Custom styling for the page */
-
+/* Styling for the forecast item set by the displayForecast function within the js script */
 .forecast-item {
     background-color: #17426c;
     border: 1px solid black;
@@ -8,11 +8,13 @@
     height: 100%;
 }
 
+/* Styling for the icon images within the 5 day forecast cards */
 .forecast-item img {
     display: block;
     margin: 0 auto;
 }
 
+/* Styling to set a marging below the paragraph element from within the forecast cards to allow for spacing at the bottom of the card */
 .forecast-item p {
     margin-bottom: 5px;
 }
