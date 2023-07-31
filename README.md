@@ -1,7 +1,13 @@
 # GR - Weather Dashboard
 ## Description
 
-Info Coming Soon.
+This is a weather dashboard app that will display the current weather as well as the 5 day forecast of the city a user choses to search for.
+The app makes an api (third-party api) call to the OpenweatherMap API to fetch for the following details and displays it on the page:
+- City
+- Current Date
+- Temperature 
+- Humidity 
+- Wind Speed
 
 ## Installation
 
@@ -12,7 +18,6 @@ https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-gi
 
 ## Usage
 
-Info Coming Soon.
 
 Link to deployed live URL [here.](https://grosario1.github.io/gr-weather-dashboard/)
 
@@ -22,4 +27,4 @@ You can find code repo [here.](https://github.com/grosario1/gil-rosario-coding-q
 
 ## Credits
 
-N/A
+Credit to the previous Module 5 & Module 6 excersizes to help me formulate the code.
