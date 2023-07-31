@@ -16,9 +16,7 @@ Info Coming Soon.
 
 Link to deployed live URL [here.](https://grosario1.github.io/gr-weather-dashboard/)
 
-![Alt text]("../../assets/../images/coding-ap-main-pg.jpg)
-![Alt text]("../../assets/../images/coding-ap-question-example-on-page.jpg)
-]
+![Alt text]("../../assets/gr-weather-dashboard.jpg)
 
 You can find code repo [here.](https://github.com/grosario1/gil-rosario-coding-quiz-app)
 
